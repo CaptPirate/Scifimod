@@ -1,10 +1,10 @@
 {
 	"__comment": "Made By Ubalube",
 	"textures": {
-		"texture": "sfa:sharedtextures/hardened_clay_stained_cyan",
-		"texture1": "sfa:sharedtextures/quartz_block_side",
-		"texture2": "sfa:sharedtextures/anvil_base",
-		"texture3": "sfa:sharedtextures/wool_colored_magenta"
+		"texture": "minecraft:blocks/hardened_clay_stained_cyan",
+		"texture1": "minecraft:blocks/quartz_block_side",
+		"texture2": "minecraft:blocks/anvil_base",
+		"texture3": "minecraft:blocks/wool_colored_magenta"
 	},
 	"elements": [ 	 
 		{
