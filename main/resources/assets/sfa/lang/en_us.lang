@@ -1,7 +1,13 @@
-﻿item.mavaschem1.name=Mava Code <Machete>
-item.mavaschem2.name=Mava Code <Heroic Sword>
-item.mavaschem3.name=Mava Code <Nailed Baseball Bat>
-item.mavaschem4.name=Mava Code <Rifle>
-item.mavaschem5.name=Mava Code <Hatchet>
+//Items
+//item.name_of_item.name=Name of item
 
-item.pan.name=The Winner
+//Blocks
+//tile.name_of_block.name=Name of Block
+
+//Tools
+
+//Armor
+
+//Guns
+
+//Machines
