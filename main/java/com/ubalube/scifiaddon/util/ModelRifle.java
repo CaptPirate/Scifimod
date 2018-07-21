@@ -169,6 +169,7 @@ public class ModelRifle extends ModelBase
         setRotation(e22, 0F, 0F, 0F);
     }
 
+    @Override
     public void render(Entity entity, float f, float f1, float f2, float f3, float f4, float f5)
     {
         e1.render(f5);

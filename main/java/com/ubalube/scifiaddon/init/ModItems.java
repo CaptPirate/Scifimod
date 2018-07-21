@@ -6,6 +6,7 @@ import java.util.List;
 import com.ubalube.scifiaddon.items.ItemBase;
 
 import com.ubalube.scifiaddon.items.ItemRendererRifle;
+import com.ubalube.scifiaddon.items.RifleBase;
 import com.ubalube.scifiaddon.util.ItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -47,13 +48,13 @@ public class ModItems
 	{
 		//ItemHelper.registerItemModel(); <-- That is the base, First goes the Name Given, then the modid, I think you can just do Reference.MOD_IDm and the end is the name
 		//The Item Renderer is me testing something, but it still doesn't work.
-		//RIFLE.setTileEntityItemStackRenderer(new ItemRendererRifle());
+		RIFLE.setTileEntityItemStackRenderer(new ItemRendererRifle());
 		ItemHelper.registerItemModel(RIFLE, "sfa", "rifle");
 	}
 
 	static
 	{
 		//You should recognize this this
-		RIFLE = new ItemBase("rifle", 1, CreativeTabs.COMBAT);
+		RIFLE = new RifleBase("rifle", 1, CreativeTabs.COMBAT);
 	}
 }

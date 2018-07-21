@@ -11,21 +11,17 @@ import net.minecraft.util.ResourceLocation;
 public class ItemRendererRifle extends TileEntityItemStackRenderer
 {
     //TODO Make it work
-
     public static ModelRifle MODEL = new ModelRifle();
     public static ResourceLocation TEXTURE = new ResourceLocation(Reference.MOD_ID, "textures/models/rifle.png");
+
+    public ItemRendererRifle() {
+    }
 
     @Override
     public void renderByItem(ItemStack stack, float partialTicks)
     {
-        ModelRifle MODEL = new ModelRifle();
-
-        GlStateManager.pushMatrix();
-        GlStateManager.translate(0.5F, 1.8F, 0.5F);
-        GlStateManager.scale(-1, -1, -1);
-        GlStateManager.disableCull();
         Minecraft.getMinecraft().renderEngine.bindTexture(TEXTURE);
+        GlStateManager.translate(.5, .5, .5);
         MODEL.renderModel(0.0625F);
-        GlStateManager.popMatrix();
     }
 }
