@@ -1,18 +1,16 @@
 package com.ubalube.scifiaddon.items;
 
-import java.util.Set;
-
 import com.ubalube.scifiaddon.entities.EntityBullet;
 import com.ubalube.scifiaddon.util.handlers.SoundHandler;
-
-import net.minecraft.client.audio.Sound;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 public class RifleBase extends Item
@@ -37,11 +35,11 @@ public class RifleBase extends Item
 		}
 
 		worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundHandler.GUN_FIRE_PLASMA, SoundCategory.NEUTRAL, 0.5F, 1F / (itemRand.nextFloat() * 0.4F + 0.8F));
-		playerIn.getCooldownTracker().setCooldown(this, 10);
+		playerIn.getCooldownTracker().setCooldown(this, 8);
 		if (!worldIn.isRemote)
 		{
 			EntityBullet entity = new EntityBullet(worldIn, playerIn, 7.0F);
-			entity.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3F, 0.0F);
+			entity.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 0.0F);
 			worldIn.spawnEntity(entity);
 		}
 

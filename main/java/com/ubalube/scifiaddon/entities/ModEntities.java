@@ -1,5 +1,6 @@
 package com.ubalube.scifiaddon.entities;
 
+import com.ubalube.scifiaddon.client.render.RenderPlasma;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -24,6 +25,5 @@ public class ModEntities
     @SideOnly(Side.CLIENT)
     public static void loadRenderers()
     {
-        //RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, ::new);
     }
 }
