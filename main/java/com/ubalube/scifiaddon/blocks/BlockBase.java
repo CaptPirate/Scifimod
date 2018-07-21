@@ -23,8 +23,8 @@ public class BlockBase extends Block implements IHasModel
 		setCreativeTab(tab);
 		setHardness(Hardness);
 		
-		ModBlocks.BLOCKS.add(this);
-		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		//ModBlocks.BLOCKS.add(this);
+		//ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 
 	@Override

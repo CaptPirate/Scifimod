@@ -2,10 +2,12 @@ package com.ubalube.scifiaddon;
 
 import java.awt.Dimension;
 
+import com.ubalube.scifiaddon.init.ModItems;
 import com.ubalube.scifiaddon.proxy.CommonProxy;
 import com.ubalube.scifiaddon.util.Reference;
 
 import net.minecraft.world.WorldType;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -24,12 +26,15 @@ public class main
 	
 	@SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.COMMON_PROXY_CLASS)
 	public static CommonProxy proxy;
-	
+
+	public static ModItems ITEMS = new ModItems();
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent e) 
 	{
 		//EntityInit.registerEntities();
 		//RenderHandler.registerEntityRenders();
+
+		MinecraftForge.EVENT_BUS.register(ITEMS);
 	}
 	
 	@EventHandler

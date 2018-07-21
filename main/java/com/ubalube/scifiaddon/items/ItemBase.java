@@ -12,7 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class ItemBase extends Item implements IHasModel 
+public class ItemBase extends Item
 {
 	
 	
@@ -22,16 +22,14 @@ public class ItemBase extends Item implements IHasModel
 		setRegistryName(name);
 		setCreativeTab(tab);
 		setMaxStackSize(StackSize);
-		
-		
-		
-		ModItems.ITEMS.add(this);
+
+		//ModItems.ITEMS.add(this);
 	}
 	
-	@Override
+	/*@Override
 	public void registerModels() 
 	{
 		main.proxy.registerItemRender(this, 0, "inventory");
 		
-	}
+	}*/
 }

@@ -12,26 +12,15 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class RifleBase extends Item implements IHasModel 
+public class RifleBase extends Item
 {
-	
-	
-	public RifleBase(String name, int StackSize, CreativeTabs tab) 
+	public RifleBase(String name, int StackSize, CreativeTabs tab)
 	{
 		setUnlocalizedName(name);
 		setRegistryName(name);
 		setCreativeTab(tab);
 		setMaxStackSize(StackSize);
-		
-		
-		
-		ModItems.ITEMS.add(this);
-	}
-	
-	@Override
-	public void registerModels() 
-	{
-		main.proxy.registerItemRender(this, 0, "inventory");
-		
+
+		//ModItems.ITEMS.add(this);
 	}
 }
