@@ -2,12 +2,15 @@ package com.ubalube.scifiaddon;
 
 import java.awt.Dimension;
 
+import com.ubalube.scifiaddon.entities.EntityBullet;
 import com.ubalube.scifiaddon.init.ModItems;
 import com.ubalube.scifiaddon.proxy.CommonProxy;
 import com.ubalube.scifiaddon.util.Reference;
 
+import net.minecraft.client.renderer.entity.RenderArrow;
 import net.minecraft.world.WorldType;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -33,6 +36,8 @@ public class main
 	{
 		//EntityInit.registerEntities();
 		//RenderHandler.registerEntityRenders();
+
+		//RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, ::new);
 
 		MinecraftForge.EVENT_BUS.register(ITEMS);
 	}
