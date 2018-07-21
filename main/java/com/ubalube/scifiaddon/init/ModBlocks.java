@@ -17,4 +17,5 @@ public class ModBlocks
 	
 	public static final Block RedstoneMachine = new Redstonemachine("redstonemachine", Material.IRON, null, 4.0F);
 	public static final Block RedstoneMachine_Off = new Redstonemachine("redstonemachine_off", Material.IRON, CreativeTabs.REDSTONE, 4.0F);
+	//Test
 }
