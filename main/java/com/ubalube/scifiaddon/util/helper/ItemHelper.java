@@ -1,4 +1,4 @@
-package com.ubalube.scifiaddon.util;
+package com.ubalube.scifiaddon.util.helper;
 
 import net.minecraft.client.renderer.block.model.ModelBakery;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;

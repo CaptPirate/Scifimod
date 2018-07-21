@@ -2,7 +2,7 @@ package com.ubalube.scifiaddon.init;
 
 import com.ubalube.scifiaddon.items.GuideBook;
 import com.ubalube.scifiaddon.items.RifleBase;
-import com.ubalube.scifiaddon.util.ItemHelper;
+import com.ubalube.scifiaddon.util.helper.ItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
