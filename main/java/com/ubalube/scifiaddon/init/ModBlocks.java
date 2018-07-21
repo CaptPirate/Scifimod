@@ -1,12 +1,7 @@
 package com.ubalube.scifiaddon.init;
 
 import com.ubalube.scifiaddon.blocks.BlockBase;
-<<<<<<< HEAD
-import com.ubalube.scifiaddon.blocks.machines.Redstonemachine;
-
-=======
 import com.ubalube.scifiaddon.util.ItemHelper;
->>>>>>> ef43f2293630122d31a257ea05261d6acc193e47
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,14 +17,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @Mod.EventBusSubscriber(modid = "sfa")
 public class ModBlocks 
 {
-<<<<<<< HEAD
-	public static final List<Block> BLOCKS = new ArrayList<Block>();
-	//---------- BLOCKS ------------
-	
-	public static final Block RedstoneMachine = new Redstonemachine("redstonemachine", Material.IRON, null, 4.0F);
-	public static final Block RedstoneMachine_Off = new Redstonemachine("redstonemachine_off", Material.IRON, CreativeTabs.REDSTONE, 4.0F);
-	//Test
-=======
 	public static Block TEST = new BlockBase("test", Material.IRON, CreativeTabs.DECORATIONS, 2);
 
 	@SubscribeEvent
@@ -50,5 +37,4 @@ public class ModBlocks
 	{
 		ItemHelper.registerItemModel(Item.getItemFromBlock(TEST), "sfa", "test");
 	}
->>>>>>> ef43f2293630122d31a257ea05261d6acc193e47
 }

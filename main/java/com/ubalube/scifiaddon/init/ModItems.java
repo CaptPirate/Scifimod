@@ -7,6 +7,7 @@ import com.ubalube.scifiaddon.items.ItemBase;
 
 import com.ubalube.scifiaddon.items.ItemRendererRifle;
 import com.ubalube.scifiaddon.items.RifleBase;
+import com.ubalube.scifiaddon.util.ItemHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -22,14 +23,14 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@Mod.EventBusSubscriber(modid = "sfa")
 public class ModItems 
 {
-	
-	public static final Item RIFLE = new ItemBase("Rifle", 1, CreativeTabs.COMBAT);
 	//You wouldn't be needing IHasModel with this
 	//RIFLE is the Name given.
 	public static Item RIFLE;
@@ -50,7 +51,6 @@ public class ModItems
 		RIFLE.setTileEntityItemStackRenderer(new ItemRendererRifle());
 		ItemHelper.registerItemModel(RIFLE, "sfa", "rifle");
 	}
-	
 
 	static
 	{

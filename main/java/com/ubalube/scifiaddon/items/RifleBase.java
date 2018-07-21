@@ -5,9 +5,7 @@ import net.minecraft.item.Item;
 
 public class RifleBase extends Item
 {
-	
-	
-	public RifleBase(String name, int StackSize, CreativeTabs tab) 
+	public RifleBase(String name, int StackSize, CreativeTabs tab)
 	{
 		setUnlocalizedName(name);
 		setRegistryName(name);
