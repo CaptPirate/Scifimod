@@ -107,6 +107,7 @@ package com.ubalube.scifiaddon.blocks;
 
  		}
  		
+ 		//Info Tablet Stuff
 		if(handitem.getItem() == ModItems.infotablet)
 		{
 			main.proxy.openInfoRedstoneMachine();

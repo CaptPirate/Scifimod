@@ -52,6 +52,7 @@ package com.ubalube.scifiaddon.blocks;
  	{
  		ItemStack handitem = playerIn.getHeldItemMainhand();
  			
+ 		//Info Tablet Stuff
  		if(handitem.getItem() == ModItems.infotablet)
  		{
  			main.proxy.openInfoGunTable();
@@ -60,21 +61,4 @@ package com.ubalube.scifiaddon.blocks;
  		
  		return true;
  	}
- 	
- 	@Override
-     public void neighborChanged(IBlockState state, World world, BlockPos pos, Block neighborBlock, BlockPos fromPos) {
-         super.neighborChanged(state, world, pos, neighborBlock, fromPos);
-         int x = pos.getX();
-         int y = pos.getY();
-         int z = pos.getZ();
-         EntityPlayer entity = Minecraft.getMinecraft().player;
-         if (world.isBlockPowered(new BlockPos(x, y, z))) 
-         {
-             world.setBlockState(new BlockPos(x, y, z), ModBlocks.Redstonemachine.getDefaultState(), 3);
-        }
-        else
-        {
-        	world.setBlockState(new BlockPos(x, y, z), ModBlocks.Redstonemachine_Off.getDefaultState(), 3);
-        }
-    }
 }
