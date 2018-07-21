@@ -1,6 +1,7 @@
 package com.ubalube.scifiaddon.init;
 
 import com.ubalube.scifiaddon.blocks.BlockBase;
+import com.ubalube.scifiaddon.blocks.GunTable;
 import com.ubalube.scifiaddon.blocks.Redstonemachine;
 import com.ubalube.scifiaddon.util.ItemHelper;
 
@@ -22,12 +23,15 @@ public class ModBlocks
 	
 	public static Block Redstonemachine = new Redstonemachine("redstonemachine", Material.IRON, null, 4.0F);
 	public static Block Redstonemachine_Off = new Redstonemachine("redstonemachine_off", Material.IRON, CreativeTabs.REDSTONE, 4.0F);
+	
+	public static Block guntable = new GunTable("guntable", Material.IRON, CreativeTabs.REDSTONE, 4.0F);
 
 	@SubscribeEvent
 	public static void onRegisterBlocks(RegistryEvent.Register<Block> e)
 	{
 		e.getRegistry().register(Redstonemachine);
 		e.getRegistry().register(Redstonemachine_Off);
+		e.getRegistry().register(guntable);
 	}
 
 	@SubscribeEvent
@@ -35,6 +39,7 @@ public class ModBlocks
 	{
 		e.getRegistry().register((new ItemBlock(Redstonemachine)).setRegistryName(Redstonemachine.getRegistryName()));
 		e.getRegistry().register((new ItemBlock(Redstonemachine_Off)).setRegistryName(Redstonemachine_Off.getRegistryName()));
+		e.getRegistry().register((new ItemBlock(guntable)).setRegistryName(guntable.getRegistryName()));
 	}
 
 	@SideOnly(Side.CLIENT)
@@ -43,5 +48,6 @@ public class ModBlocks
 	{
 		ItemHelper.registerItemModel(Item.getItemFromBlock(Redstonemachine), "sfa", "redstonemachine");
 		ItemHelper.registerItemModel(Item.getItemFromBlock(Redstonemachine_Off), "sfa", "redstonemachine_off");
+		ItemHelper.registerItemModel(Item.getItemFromBlock(guntable), "sfa", "guntable");
 	}
 }

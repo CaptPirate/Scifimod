@@ -31,12 +31,12 @@ package com.ubalube.scifiaddon.blocks;
  import net.minecraftforge.fml.relauncher.Side;
  import net.minecraftforge.fml.relauncher.SideOnly;
  
- public class Redstonemachine extends Block 
+ public class GunTable extends Block 
  {
  	
  	int amt;
  	
- 	public Redstonemachine(String name, Material material, CreativeTabs tab, float Hardness) 
+ 	public GunTable(String name, Material material, CreativeTabs tab, float Hardness) 
  	{
  		super(material);
  		setUnlocalizedName(name);
@@ -51,66 +51,11 @@ package com.ubalube.scifiaddon.blocks;
  			EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) 
  	{
  		ItemStack handitem = playerIn.getHeldItemMainhand();
- 		
- 		
- 		
- 		if(worldIn.isBlockPowered(pos))
- 		{
- 			if(handitem.getItem() == Items.DIAMOND || handitem.getItem() == Items.EMERALD || handitem.getItem() == Items.IRON_INGOT 
- 					|| handitem.getItem() == Items.GOLD_INGOT || handitem.getItem() == Items.COAL || handitem.getItem() == Items.POTATO)
- 			{
- 				
- 				if(handitem.getItem() == Items.DIAMOND)
- 				{
- 					amt = 10;
- 				}
- 				else 
- 				{
- 					if(handitem.getItem() == Items.EMERALD)
- 					{
- 						amt = 20;
- 					}
- 					else
- 					{
- 						if(handitem.getItem() == Items.IRON_INGOT)
- 						{
- 							amt = 5;
- 						}
- 						else
- 						{
- 							if(handitem.getItem() == Items.GOLD_INGOT)
- 							{
- 								amt = 8;
- 							}
- 							else
- 							{
- 								if(handitem.getItem() == Items.COAL)
- 								{
- 									amt = 3;
- 								}
- 								else
- 								{
- 									if(handitem.getItem() == Items.POTATO)
- 									{
- 										amt = 1;
- 									}
- 								}
- 							}
- 						}
- 					}
- 				}
- 				
- 				playerIn.inventory.clearMatchingItems(handitem.getItem(), -1, 1, null);
- 				playerIn.inventory.addItemStackToInventory(new ItemStack(Items.REDSTONE, amt));
- 			}
  			
-
+ 		if(handitem.getItem() == ModItems.infotablet)
+ 		{
+ 			main.proxy.openInfoGunTable();
  		}
- 		
-		if(handitem.getItem() == ModItems.infotablet)
-		{
-			main.proxy.openInfoRedstoneMachine();
-		}
  		
  		
  		return true;

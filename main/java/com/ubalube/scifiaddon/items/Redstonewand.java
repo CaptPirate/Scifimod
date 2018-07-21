@@ -1,6 +1,7 @@
 package com.ubalube.scifiaddon.items;
 
 import net.minecraft.block.BlockLever;
+import net.minecraft.block.BlockRedstoneTorch;
 import net.minecraft.block.BlockRedstoneWire;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -29,6 +30,11 @@ public class Redstonewand extends Item
 	public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand,
 			EnumFacing facing, float hitX, float hitY, float hitZ) 
 	{
+		
+		if(worldIn.getBlockState(pos).canProvidePower())
+		{
+			
+		}
 		
 		return super.onItemUse(player, worldIn, pos, hand, facing, hitX, hitY, hitZ);
 	}

@@ -2,6 +2,6 @@
    "parent": "item/generated",
    "textures": 
    {
-       "layer0": "sfa:items/guidebook"
+       "layer0": "sfa:items/infotablet"
    }
 }

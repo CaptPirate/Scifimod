@@ -20,14 +20,4 @@ public class GuideBook extends Item
 		setMaxStackSize(StackSize);
 	}
 	
-	@Override
-	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn) 
-	{
-		if(!worldIn.isRemote)
-		{
-			main.proxy.openMyGui();
-		}
-		return super.onItemRightClick(worldIn, playerIn, handIn);
-	}
-	
 }

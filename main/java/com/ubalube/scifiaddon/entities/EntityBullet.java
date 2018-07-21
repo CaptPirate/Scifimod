@@ -1,10 +1,12 @@
 package com.ubalube.scifiaddon.entities;
 
 import io.netty.buffer.ByteBuf;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
@@ -38,17 +40,23 @@ public class EntityBullet extends EntityThrowable implements IEntityAdditionalSp
         }
         super.onEntityUpdate();
     }
-
+    
+    int x = (int) this.posX;
+    int y = (int) this.posY;
+    int z = (int) this.posZ;
     @Override
     protected void onImpact(RayTraceResult result)
     {
         if (result == null || isDead)
-            return;
-
+        {
+        	
+        }
         if (result.typeOfHit == Type.ENTITY)
         {
-            if(result.entityHit == this.thrower) return;
+            if(result.entityHit == this.thrower); 
             result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, getThrower()), damage);
+            world.spawnParticle(EnumParticleTypes.DRAGON_BREATH, (double) posX, (double) posY, (double) posZ, 0.0D, 0.0D, 0.0D);
+            return;
         }
     }
 
