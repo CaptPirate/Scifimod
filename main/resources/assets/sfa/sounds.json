@@ -1,0 +1,8 @@
+{
+    "gun.shoot.plasma":
+    {
+        "category": "gun",
+        "subtitle": "plasma shoot",
+        "sounds": [{ "name": "sfa:gun/pew/pew1", "stream": true}]
+    }
+}

@@ -6,6 +6,7 @@ import com.ubalube.scifiaddon.entities.EntityBullet;
 import com.ubalube.scifiaddon.init.ModItems;
 import com.ubalube.scifiaddon.proxy.CommonProxy;
 import com.ubalube.scifiaddon.util.Reference;
+import com.ubalube.scifiaddon.util.handlers.SoundHandler;
 
 import net.minecraft.client.renderer.entity.RenderArrow;
 import net.minecraft.world.WorldType;
@@ -45,7 +46,7 @@ public class main
 	@EventHandler
 	public static void init(FMLInitializationEvent e) 
 	{
-		
+		SoundHandler.registerSounds();
 	}
 	
 	@EventHandler

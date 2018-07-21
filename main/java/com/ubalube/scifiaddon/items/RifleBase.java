@@ -1,6 +1,10 @@
 package com.ubalube.scifiaddon.items;
 
+import java.util.Set;
+
 import com.ubalube.scifiaddon.entities.EntityBullet;
+import com.ubalube.scifiaddon.util.handlers.SoundHandler;
+
 import net.minecraft.client.audio.Sound;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,6 +17,8 @@ import net.minecraft.world.World;
 
 public class RifleBase extends Item
 {
+	public boolean soundshoot = false;
+	
 	public RifleBase(String name, int StackSize, CreativeTabs tab)
 	{
 		setUnlocalizedName(name);
@@ -27,6 +33,7 @@ public class RifleBase extends Item
 		if (!playerIn.capabilities.isCreativeMode)
 		{
 			itemstack.damageItem(1, playerIn);
+			soundshoot = true;
 		}
 
 		playerIn.getCooldownTracker().setCooldown(this, 10);

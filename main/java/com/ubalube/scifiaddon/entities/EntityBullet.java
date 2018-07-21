@@ -1,12 +1,17 @@
 package com.ubalube.scifiaddon.entities;
 
+import com.ubalube.scifiaddon.util.handlers.SoundHandler;
+
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityThrowable;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
@@ -100,5 +105,6 @@ public class EntityBullet extends EntityThrowable implements IEntityAdditionalSp
     {
         return false;
     }
+    
 
 }
