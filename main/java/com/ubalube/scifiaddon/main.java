@@ -38,8 +38,6 @@ public class main
 		//EntityInit.registerEntities();
 		//RenderHandler.registerEntityRenders();
 
-		//RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, ::new);
-
 		MinecraftForge.EVENT_BUS.register(ITEMS);
 	}
 	

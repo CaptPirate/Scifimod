@@ -1,7 +1,7 @@
 package com.ubalube.scifiaddon.proxy;
 
-import com.ubalube.scifiaddon.gui.GunTable;
-import com.ubalube.scifiaddon.gui.RedstoneMachine;
+import com.ubalube.scifiaddon.client.gui.GunTable;
+import com.ubalube.scifiaddon.client.gui.RedstoneMachine;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.Item;

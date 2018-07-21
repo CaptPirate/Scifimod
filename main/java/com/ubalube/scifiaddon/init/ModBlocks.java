@@ -1,9 +1,8 @@
 package com.ubalube.scifiaddon.init;
 
-import com.ubalube.scifiaddon.blocks.BlockBase;
 import com.ubalube.scifiaddon.blocks.GunTable;
 import com.ubalube.scifiaddon.blocks.Redstonemachine;
-import com.ubalube.scifiaddon.util.ItemHelper;
+import com.ubalube.scifiaddon.util.helper.ItemHelper;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;

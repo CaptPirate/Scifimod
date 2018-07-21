@@ -1,18 +1,14 @@
-package com.ubalube.scifiaddon.gui;
+package com.ubalube.scifiaddon.client.gui;
 
 import org.lwjgl.opengl.GL11;
 
 import com.ubalube.scifiaddon.util.Reference;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class RedstoneMachine extends GuiScreen
+public class GunTable extends GuiScreen
 {
 private final int bookImageHeight = 192;
 private final int bookImageWidth = 192;
@@ -22,10 +18,10 @@ private static ResourceLocation[] bookPageTextures =
       new ResourceLocation[bookTotalPages];
 private static String[] stringPageText = new String[bookTotalPages];
 
-public RedstoneMachine()
+public GunTable()
 {
     bookPageTextures[0] = new ResourceLocation(
-          Reference.MOD_ID+":textures/gui/page1.png");
+          Reference.MOD_ID+":textures/gui/page2.png");
 }
 
 /**
