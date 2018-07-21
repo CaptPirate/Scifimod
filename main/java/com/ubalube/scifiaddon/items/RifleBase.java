@@ -36,6 +36,7 @@ public class RifleBase extends Item
 			soundshoot = true;
 		}
 
+		worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundHandler.GUN_FIRE_PLASMA, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 		playerIn.getCooldownTracker().setCooldown(this, 10);
 		if (!worldIn.isRemote)
 		{
