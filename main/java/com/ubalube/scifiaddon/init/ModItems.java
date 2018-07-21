@@ -15,8 +15,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 @Mod.EventBusSubscriber(modid = "sfa")
 public class ModItems 
 {
-	//You wouldn't be needing IHasModel with this
-	//RIFLE is the Name given.
 	public static Item RIFLE;
 	public static Item infotablet;
 
@@ -33,14 +31,12 @@ public class ModItems
 	public static void onRegisterModels(ModelRegistryEvent e)
 	{
 		//ItemHelper.registerItemModel(); <-- That is the base, First goes the Name Given, then the modid, I think you can just do Reference.MOD_IDm and the end is the name
-		//The Item Renderer is me testing something, but it still doesn't work.
 		ItemHelper.registerItemModel(RIFLE, "sfa", "rifle");
 		ItemHelper.registerItemModel(infotablet, "sfa", "infotablet");
 	}
 
 	static
 	{
-		//You should recognize this this
 		RIFLE = new RifleBase("rifle", 1, CreativeTabs.COMBAT);
 		infotablet = new GuideBook("infotablet", 1, CreativeTabs.MATERIALS);
 	}
