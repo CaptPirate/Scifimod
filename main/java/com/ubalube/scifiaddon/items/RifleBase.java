@@ -23,8 +23,6 @@ public class RifleBase extends Item implements IHasModel
 		setCreativeTab(tab);
 		setMaxStackSize(StackSize);
 		
-		
-		
 		ModItems.ITEMS.add(this);
 	}
 	
