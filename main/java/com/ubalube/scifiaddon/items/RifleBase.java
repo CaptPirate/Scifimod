@@ -1,6 +1,9 @@
 package com.ubalube.scifiaddon.items;
 
+import com.ubalube.scifiaddon.main;
 import com.ubalube.scifiaddon.entities.EntityBullet;
+import com.ubalube.scifiaddon.init.ModItems;
+import com.ubalube.scifiaddon.util.IHasModel;
 import com.ubalube.scifiaddon.util.handlers.SoundHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,7 +16,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class RifleBase extends Item
+public class RifleBase extends Item implements IHasModel
 {
 	public boolean soundshoot = false;
 	
@@ -23,6 +26,8 @@ public class RifleBase extends Item
 		setRegistryName(name);
 		setCreativeTab(tab);
 		setMaxStackSize(StackSize);
+		
+		ModItems.ITEMS.add(this);
 	}
 
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
@@ -45,5 +50,12 @@ public class RifleBase extends Item
 
 		playerIn.addStat(StatList.getObjectUseStats(this));
 		return new ActionResult(EnumActionResult.SUCCESS, itemstack);
+	}
+	
+	@Override
+	public void registerModels() 
+	{
+		main.proxy.registerItemRender(this, 0, "inventory");
+		
 	}
 }

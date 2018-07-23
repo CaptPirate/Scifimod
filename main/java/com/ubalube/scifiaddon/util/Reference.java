@@ -10,5 +10,7 @@ public class Reference
 	public static final String CLIENT_PROXY_CLASS = "com.ubalube.scifiaddon.proxy.ClientProxy";
 	public static final String COMMON_PROXY_CLASS = "com.ubalube.scifiaddon.proxy.CommonProxy";
 	
+	public static final int GUI_Harvestor = 0;
+	
 }
 

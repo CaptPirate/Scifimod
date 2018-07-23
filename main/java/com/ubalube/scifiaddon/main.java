@@ -5,6 +5,7 @@ import com.ubalube.scifiaddon.entities.EntityBullet;
 import com.ubalube.scifiaddon.init.ModItems;
 import com.ubalube.scifiaddon.proxy.CommonProxy;
 import com.ubalube.scifiaddon.util.Reference;
+import com.ubalube.scifiaddon.util.handlers.GuiHandler;
 import com.ubalube.scifiaddon.util.handlers.SoundHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
@@ -15,6 +16,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.NAME, version = Reference.VERSION)
 public class main 
@@ -29,11 +31,12 @@ public class main
 	@EventHandler
 	public static void PreInit(FMLPreInitializationEvent e) 
 	{
-		//EntityInit.registerEntities();
-		//RenderHandler.registerEntityRenders();
-
+		
 		RenderingRegistry.registerEntityRenderingHandler(EntityBullet.class, RenderPlasma::new);
 		MinecraftForge.EVENT_BUS.register(ITEMS);
+		
+		NetworkRegistry.INSTANCE.registerGuiHandler(main.instance, new GuiHandler());
+		
 	}
 	
 	@EventHandler

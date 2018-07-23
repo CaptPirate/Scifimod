@@ -1,7 +1,11 @@
 package com.ubalube.scifiaddon.init;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.ubalube.scifiaddon.blocks.GunTable;
 import com.ubalube.scifiaddon.blocks.Redstonemachine;
+import com.ubalube.scifiaddon.blocks.Harvestor;
 import com.ubalube.scifiaddon.util.helper.ItemHelper;
 
 import net.minecraft.block.Block;
@@ -20,33 +24,11 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ModBlocks 
 {
 	
-	public static Block Redstonemachine = new Redstonemachine("redstonemachine", Material.IRON, null, 4.0F);
-	public static Block Redstonemachine_Off = new Redstonemachine("redstonemachine_off", Material.IRON, CreativeTabs.REDSTONE, 4.0F);
+	public static final List<Block> BLOCKS = new ArrayList<Block>();
 	
-	public static Block guntable = new GunTable("guntable", Material.IRON, CreativeTabs.REDSTONE, 4.0F);
-
-	@SubscribeEvent
-	public static void onRegisterBlocks(RegistryEvent.Register<Block> e)
-	{
-		e.getRegistry().register(Redstonemachine);
-		e.getRegistry().register(Redstonemachine_Off);
-		e.getRegistry().register(guntable);
-	}
-
-	@SubscribeEvent
-	public static void onRegisterItems(RegistryEvent.Register<Item> e)
-	{
-		e.getRegistry().register((new ItemBlock(Redstonemachine)).setRegistryName(Redstonemachine.getRegistryName()));
-		e.getRegistry().register((new ItemBlock(Redstonemachine_Off)).setRegistryName(Redstonemachine_Off.getRegistryName()));
-		e.getRegistry().register((new ItemBlock(guntable)).setRegistryName(guntable.getRegistryName()));
-	}
-
-	@SideOnly(Side.CLIENT)
-	@SubscribeEvent
-	public static void onRegisterModels(ModelRegistryEvent e)
-	{
-		ItemHelper.registerItemModel(Item.getItemFromBlock(Redstonemachine), "sfa", "redstonemachine");
-		ItemHelper.registerItemModel(Item.getItemFromBlock(Redstonemachine_Off), "sfa", "redstonemachine_off");
-		ItemHelper.registerItemModel(Item.getItemFromBlock(guntable), "sfa", "guntable");
-	}
+	public static final Block Redstonemachine = new Redstonemachine("redstonemachine", Material.ANVIL, null, 4.0F);
+	public static final Block Redstonemachine_Off = new Redstonemachine("redstonemachine_off", Material.ANVIL, CreativeTabs.REDSTONE, 4.0F);
+	
+	public static final Block Guntable = new GunTable("guntable", Material.ANVIL, CreativeTabs.REDSTONE, 4.0F);
+	public static final Block Harvestor = new Harvestor("harvestor", Material.ANVIL, CreativeTabs.REDSTONE, 4.0F);
 }

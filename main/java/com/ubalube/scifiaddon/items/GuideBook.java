@@ -1,6 +1,8 @@
 package com.ubalube.scifiaddon.items;
 
 import com.ubalube.scifiaddon.main;
+import com.ubalube.scifiaddon.init.ModItems;
+import com.ubalube.scifiaddon.util.IHasModel;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,7 +12,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
-public class GuideBook extends Item
+public class GuideBook extends Item implements IHasModel
 {
 	public GuideBook(String name, int StackSize, CreativeTabs tab) 
 	{
@@ -18,6 +20,14 @@ public class GuideBook extends Item
 		setRegistryName(name);
 		setCreativeTab(tab);
 		setMaxStackSize(StackSize);
+		
+		ModItems.ITEMS.add(this);
 	}
 	
+	@Override
+	public void registerModels() 
+	{
+		main.proxy.registerItemRender(this, 0, "inventory");
+		
+	}
 }

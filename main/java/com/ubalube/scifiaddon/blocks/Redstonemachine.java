@@ -7,7 +7,9 @@ package com.ubalube.scifiaddon.blocks;
  import com.ubalube.scifiaddon.main;
  import com.ubalube.scifiaddon.init.ModBlocks;
  import com.ubalube.scifiaddon.init.ModItems;
- import net.minecraft.block.Block;
+import com.ubalube.scifiaddon.util.IHasModel;
+
+import net.minecraft.block.Block;
  import net.minecraft.block.BlockDaylightDetector;
  import net.minecraft.block.BlockFalling;
  import net.minecraft.block.BlockFurnace;
@@ -31,7 +33,7 @@ package com.ubalube.scifiaddon.blocks;
  import net.minecraftforge.fml.relauncher.Side;
  import net.minecraftforge.fml.relauncher.SideOnly;
  
- public class Redstonemachine extends Block 
+ public class Redstonemachine extends Block implements IHasModel
  {
  	
  	int amt;
@@ -43,6 +45,9 @@ package com.ubalube.scifiaddon.blocks;
  		setRegistryName(name);
  		setCreativeTab(tab);
  		setHardness(Hardness);
+ 		
+		ModBlocks.BLOCKS.add(this);
+		ModItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
  	}
  	
  	@Override
@@ -133,4 +138,10 @@ package com.ubalube.scifiaddon.blocks;
         	world.setBlockState(new BlockPos(x, y, z), ModBlocks.Redstonemachine_Off.getDefaultState(), 3);
         }
     }
+ 	
+	@Override
+	public void registerModels() 
+	{
+		main.proxy.registerItemRender(Item.getItemFromBlock(this), 0, "inventory");
+	}
 }
