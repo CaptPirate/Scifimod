@@ -1,10 +1,12 @@
 package com.ubalube.scifiaddon.items;
 
-import com.ubalube.scifiaddon.main;
 import com.ubalube.scifiaddon.entities.EntityBullet;
 import com.ubalube.scifiaddon.init.ModItems;
+import com.ubalube.scifiaddon.main;
 import com.ubalube.scifiaddon.util.IHasModel;
 import com.ubalube.scifiaddon.util.handlers.SoundHandler;
+import net.minecraft.client.model.ModelPlayer;
+import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -15,6 +17,10 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class RifleBase extends Item implements IHasModel
 {
@@ -51,11 +57,9 @@ public class RifleBase extends Item implements IHasModel
 		playerIn.addStat(StatList.getObjectUseStats(this));
 		return new ActionResult(EnumActionResult.SUCCESS, itemstack);
 	}
-	
 	@Override
 	public void registerModels() 
 	{
 		main.proxy.registerItemRender(this, 0, "inventory");
-		
 	}
 }
